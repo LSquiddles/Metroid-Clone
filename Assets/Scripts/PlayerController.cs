@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor.Compilation;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class PlayerController : MonoBehaviour
     public int lives = 3;
     public int fallDepth;
     private Vector3 startPosition;
+
+    public float totalCoins = 0f;
+    private float coinValue = 1f;
 
     // Start is called before the first frame update
     void Start()
@@ -30,9 +34,27 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.tag == "Coin")
+        {
+            totalCoins += coinValue;
+            Destroy(other.gameObject);
+        }
+
+
         if (other.gameObject.GetComponent<EnemyController>())
         {
             Respawn();
+        }
+
+        if (other.gameObject.tag == "Spike")
+        {
+            Respawn();
+        }
+
+        if (other.gameObject.GetComponent<PortalScript>())
+        {
+            startPosition = other.gameObject.GetComponent<PortalScript>().spawnPoint.transform.position;
+            transform.position = startPosition;
         }
     }
 
@@ -98,6 +120,7 @@ public class PlayerController : MonoBehaviour
         if (lives <= 0)
         {
             this.enabled = false;
+            SceneManager.LoadScene(2);
         }
     }
 }
