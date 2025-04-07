@@ -1145,6 +1145,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6161059336538229801, guid: 11671d23cfed3f84f800cfa3c95aca56, type: 3}
+      propertyPath: startDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6161059336538229801, guid: 11671d23cfed3f84f800cfa3c95aca56, type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 1201431261792538559, guid: c6692cc5c06cd2444b577c926b23b122, type: 3}
+    - target: {fileID: 6161059336538229801, guid: 11671d23cfed3f84f800cfa3c95aca56, type: 3}
+      propertyPath: timeBetweenShots
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6513096865172134753, guid: 11671d23cfed3f84f800cfa3c95aca56, type: 3}
       propertyPath: m_Name
       value: Player

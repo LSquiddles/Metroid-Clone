@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Player Variables")]
     public int speed;
     public int jumpForce;
     private Rigidbody rigidbody;
@@ -145,5 +146,7 @@ public class PlayerController : MonoBehaviour
                 projectile.GetComponent<LaserScript>().goingLeft = goingLeft;
             }
         }
+
+
     }
 }
