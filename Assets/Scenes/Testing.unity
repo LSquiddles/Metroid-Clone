@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: {fileID: 1895981646}
-  livesText: {fileID: 2120237506}
+  healthText: {fileID: 2120237506}
   coinsText: {fileID: 825227934}
 --- !u!114 &4542792
 MonoBehaviour:
@@ -804,7 +804,7 @@ GameObject:
   - component: {fileID: 2120237507}
   - component: {fileID: 2120237506}
   m_Layer: 5
-  m_Name: Lives
+  m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -830,7 +830,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Lives: '
+  m_text: 'Health: '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -924,7 +924,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 21, y: -15}
-  m_SizeDelta: {x: 298.075, y: 53.624}
+  m_SizeDelta: {x: 370.244, y: 61.481}
   m_Pivot: {x: 0, y: 1}
 --- !u!1001 &1652909282138099014
 PrefabInstance:

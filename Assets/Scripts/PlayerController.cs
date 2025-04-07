@@ -11,12 +11,19 @@ public class PlayerController : MonoBehaviour
     public int jumpForce;
     private Rigidbody rigidbody;
 
-    public int lives = 3;
+    public int Health = 100;
     public int fallDepth;
     private Vector3 startPosition;
 
     public float totalCoins = 0f;
     private float coinValue = 1f;
+
+    [Header("Projectile Variable")]
+    public bool goingLeft;
+    [Header("Spawner Variable")]
+    public GameObject projectilePrefab;
+    public float timeBetweenShots;
+    public float startDelay;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +37,7 @@ public class PlayerController : MonoBehaviour
     {
         Movement();
         SpaceJump();
+        SpawnProjectiles();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -111,16 +119,31 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
+    /// <summary>
+    /// lets the player respawn
+    /// </summary>
     private void Respawn()
     {
         transform.position = startPosition;
-        lives--;
+        Health--;
 
-        if (lives <= 0)
+        if (Health <= 0)
         {
             this.enabled = false;
             SceneManager.LoadScene(2);
+        }
+    }
+
+
+    public void SpawnProjectiles()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            GameObject projectile = Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+            if (projectile.GetComponent<LaserScript>())
+            {
+                projectile.GetComponent<LaserScript>().goingLeft = goingLeft;
+            }
         }
     }
 }
