@@ -42,7 +42,7 @@ Camera:
   m_GameObject: {fileID: 2431240663039858394}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 2
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -106,6 +106,7 @@ GameObject:
   - component: {fileID: 7764213554323186535}
   - component: {fileID: 6161059336538229801}
   - component: {fileID: 100300542915191391}
+  - component: {fileID: 4729050681052847999}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -123,7 +124,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.89393, y: 0.89393, z: 0.89393}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5766899198636710848}
@@ -216,8 +217,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   jumpForce: 8
-  lives: 3
+  Health: 100
   fallDepth: -10
+  totalCoins: 0
 --- !u!54 &100300542915191391
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -245,3 +247,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 88
   m_CollisionDetection: 0
+--- !u!114 &4729050681052847999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6513096865172134753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5137bbae611c98f4caf50bc335c3001c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goingLeft: 0
+  projectilePrefab: {fileID: 1201431261792538559, guid: c6692cc5c06cd2444b577c926b23b122, type: 3}
+  timeBetweenShots: 3
+  startDelay: 2

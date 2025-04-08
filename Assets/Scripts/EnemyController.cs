@@ -29,9 +29,9 @@ public class EnemyController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<PlayerController>())
+        if (other.gameObject.GetComponent<LaserScript>())
         {
-
+            Destroy(other.gameObject);
         }
     }
 
