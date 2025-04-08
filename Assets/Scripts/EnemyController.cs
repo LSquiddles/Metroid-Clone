@@ -12,7 +12,7 @@ public class EnemyController : MonoBehaviour
     public int speed;
     public bool goingLeft;
 
-    public int damage;
+    public int damage = 15;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +25,14 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         Move();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.GetComponent<PlayerController>())
+        {
+
+        }
     }
 
     public void Move()
