@@ -120,3 +120,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 12
   goingLeft: 0
+  Enemy: {fileID: 1583425611168762735, guid: 7852eb7eac7ab6f44ad9cd0bc66c4bde, type: 3}

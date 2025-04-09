@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Android.Types;
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour
@@ -12,27 +14,21 @@ public class EnemyController : MonoBehaviour
     public int speed;
     public bool goingLeft;
 
-    public int damage = 15;
+    public int Health = 1;
 
     // Start is called before the first frame update
     void Start()
     {
         leftPos = leftPoint.transform.position;
         rightPos = rightPoint.transform.position;
+
+        Health = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
         Move();
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.GetComponent<LaserScript>())
-        {
-            Destroy(other.gameObject);
-        }
     }
 
     public void Move()
@@ -58,6 +54,14 @@ public class EnemyController : MonoBehaviour
             {
                 transform.position += Vector3.right * speed * Time.deltaTime;
             }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<LaserScript>())
+        {
+            print("hit enemy");
         }
     }
 }

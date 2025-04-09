@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class LaserScript : MonoBehaviour
@@ -8,6 +9,7 @@ public class LaserScript : MonoBehaviour
     public bool goingLeft;
     private float cooldownTime = 5;
     private float nextFire = 3f;
+
 
     // Update is called once per frame
     void Update()
@@ -21,6 +23,15 @@ public class LaserScript : MonoBehaviour
         {
             transform.position += speed * Vector3.left * Time.deltaTime;
             nextFire = cooldownTime;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<EnemyController>())
+        {
+            print("hit enemy");
+            
         }
     }
 }
